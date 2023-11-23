@@ -54,11 +54,15 @@ input, button {
     outline: none;
     font: inherit;
     color: var(--FONT-COLOR);
+    margin-bottom: 0.5rem;
 }
 
 input {
-    width: 100%;
-    margin-bottom: 0.5rem;
+    width: 100%;  
+}
+
+ul {
+    list-style-type: none;
 }
 
 button:hover {
@@ -68,4 +72,12 @@ button:hover {
 
 button:active {
     background-color: var(--BTN-ACTIVE);
+}
+
+a, a:visited {
+    color: var(--FONT-COLOR);
+}
+
+a:hover {
+    color: LightSteelBlue;
 }
