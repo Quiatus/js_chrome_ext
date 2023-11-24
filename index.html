@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ext</title>
+    <title>Leads tracker</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
 </head>
 <body>
     <main class="main">
         <section class="main__input">
             <input type="text" name="" id="input-el">
-            <button type="button" id="input-btn">SAVE INPUT</button>
+            <div class="buttons">
+                <button type="button" id="input-btn" title="Save current input">SAVE</button>
+                <button type="button" id="save-tab" title="Save active tab">SAVE TAB</button>
+                <button type="button" id="clear-last-btn" title="Remove the last item">DEL LAST</button>
+                <button type="button" id="clear-all-btn" title="Clear the list">DEL ALL</button>
+            </div>
+            <div class="deleteConfirm hidden"><p>Are you sure?</p><span id="yes">Yes</span><span id="no">No</span></div>
             <ul id="ulEl">
             </ul>
         </section>

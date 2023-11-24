@@ -12,57 +12,106 @@
 
 :root {
     /* Colors */
-    --BGCOLOR-MAIN: #223;
-    --BGCOLOR-SEC: #334;
-    --INP-COLOR: #445;
-    --FONT-COLOR: aliceblue;
-    --BTN-ACTIVE: #667;
-    --BG-COLOR: linear-gradient(90deg,var(--BGCOLOR-MAIN), var(--BGCOLOR-SEC),var(--BGCOLOR-MAIN));
+    --BGCOLOR-MAIN: #010;
+    --BGCOLOR-SEC: #121;
+    --INP-COLOR: #454;
+    --INP-COLOR-RED: #500;
+    --FONT-COLOR: #f8fff0;
+    --BTN-ACTIVE: #676;
+    --BTN-ACTIVE-RED: #700;
+    --SHADOW-COLOR: #c4deb0;
+    --SHADOW-COLOR-RED: #F00;
 
     /* Borders */
-    --THIN-BORDER: 1px solid LightSteelBlue;
-    --RADIUS: 5px;
+    --THIN-BORDER: 1px solid var(--SHADOW-COLOR);
+    --THIN-BORDER-RED: 1px solid var(--SHADOW-COLOR-RED);
+    
+    /* Margins & Paddings */
+    --HALF: 0.5rem;
 }
 
 /* -- GENERAL -- */
 
 html {
     font-family: "Roboto", sans-serif;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 body {
-    background: var(--BG-COLOR);
+    background-color: var(--BGCOLOR-MAIN);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li:first-of-type {
+    margin-top: var(--HALF);
+}
+
+a, a:visited {
+    color: var(--FONT-COLOR);
+}
+
+a:hover {
+    color: var(--SHADOW-COLOR);
 }
 
 /* -- MAIN -- */
 
 .main__input {
-    background-color: var(--BGCOLOR-MAIN);
-    width: 500px;
-    margin: 1rem auto;
+    background-color: var(--BGCOLOR-SEC);
+    width: 400px;
+    margin: 0 auto 2px;
     padding: 1rem;
     border: var(--THIN-BORDER);
-    box-shadow: 0 0 5px LightSteelBlue;
+    box-shadow: 0 0 5px var(--SHADOW-COLOR);
     color: var(--FONT-COLOR);
 }
+
+/* -- DIVS -- */
+
+.buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.deleteConfirm {
+    margin-top: var(--HALF);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.deleteConfirm span {
+    text-decoration: underline;
+}
+
+.deleteConfirm span:hover {
+    opacity: 0.75;
+    cursor: pointer;
+}
+
+/* -- INPUTS --*/
 
 input, button {
     background-color: var(--INP-COLOR);
     border: var(--THIN-BORDER);
-    padding: 0.3rem 0.5rem;
-    outline: none;
     font: inherit;
-    color: var(--FONT-COLOR);
-    margin-bottom: 0.5rem;
+    color: var(--FONT-COLOR); 
 }
 
 input {
     width: 100%;  
+    margin-bottom: var(--HALF);
+    padding: var(--HALF);
+    outline: none;          
 }
 
-ul {
-    list-style-type: none;
+button {
+    width: 24%;
+    padding: 0.3rem 0;
 }
 
 button:hover {
@@ -74,10 +123,21 @@ button:active {
     background-color: var(--BTN-ACTIVE);
 }
 
-a, a:visited {
-    color: var(--FONT-COLOR);
+button:last-of-type {
+    background-color: var(--INP-COLOR-RED);
+    border: var(--THIN-BORDER-RED);
 }
 
-a:hover {
-    color: LightSteelBlue;
+button:last-of-type:hover {
+    border-color: var(--FONT-COLOR);
+    text-shadow: 0 0 5px var(--FONT-COLOR);
+}
+
+button:last-of-type:active {
+    background-color: var(--BTN-ACTIVE-RED);
+}
+
+/* must be at the bottom to overwrite display  */
+.hidden {
+    display: none;
 }
